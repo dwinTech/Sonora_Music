@@ -44,8 +44,8 @@ If Google sign-in returns `Unsupported provider: provider is not enabled`, Googl
 ```powershell
 Copy-Item .env.example .env
 # Set your Supabase URL and public anon/publishable key in .env before starting.
-corepack pnpm install
-corepack pnpm dev
+npm install
+npm run dev
 ```
 
 Sign up or sign in. If the tables are empty, Sonora imports the signed-in user's existing local demo catalog and playlists into Supabase. Otherwise, Supabase is authoritative and replaces that user's local cache with the cloud library. Track, playlist, folder, and favorite edits sync automatically. Upload audio (up to 50 MB) from a playlist or library; new uploads go to the private `music` bucket. Database/network errors are shown in the app.
@@ -135,14 +135,14 @@ lib/
 
 ```powershell
 # After completing Supabase setup above:
-corepack pnpm dev
+npm run dev
 ```
 
-`pnpm dev` and `pnpm build` run the Quasar single-page application. No separate Node SSR server setup is required.
+`npm run dev` and `npm run build` run the Quasar single-page application. No separate Node SSR server setup is required.
 
 ## Checks and production build
 
 ```powershell
-corepack pnpm typecheck
-corepack pnpm build
+npm run typecheck
+npm run build
 ```
