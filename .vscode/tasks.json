@@ -1,0 +1,342 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Verify sign-in form",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"exec",
+				"prettier",
+				"--",
+				"--write",
+				"src/components/auth/AuthPanel.vue"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate auth form",
+			"type": "shell",
+			"command": "npm run typecheck; if ($?) { npm exec eslint -- -c ./eslint.config.js src/components/auth/AuthPanel.vue }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Google sign-in",
+			"type": "shell",
+			"command": "npm run typecheck; if ($?) { npm exec eslint -- -c ./eslint.config.js src/components/auth/AuthPanel.vue }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Supabase client move",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"typecheck"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Lint Supabase imports",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"exec",
+				"eslint",
+				"--",
+				"-c",
+				"./eslint.config.js",
+				"src/components/auth/AuthGate.vue",
+				"src/components/auth/AuthPanel.vue",
+				"lib/supabase/client.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Typecheck backend sync",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"typecheck"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Lint backend sync",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"exec",
+				"eslint",
+				"--",
+				"-c",
+				"./eslint.config.js",
+				"src/components/library/SonoraLibrary.vue",
+				"lib/supabase/client.ts",
+				"lib/supabase/library.ts",
+				"lib/supabase/database.types.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify cloud library integration",
+			"type": "shell",
+			"command": "npm run typecheck; if ($?) { npm exec eslint -- -c ./eslint.config.js src/components/library/SonoraLibrary.vue lib/supabase/client.ts lib/supabase/library.ts lib/supabase/database.types.ts }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build cloud library integration",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Format backend setup files",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"exec",
+				"prettier",
+				"--",
+				"--write",
+				"README.md",
+				"lib/supabase/client.ts",
+				"lib/supabase/library.ts",
+				"lib/supabase/database.types.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final backend lint",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"exec",
+				"eslint",
+				"--",
+				"-c",
+				"./eslint.config.js",
+				"src/components/library/SonoraLibrary.vue",
+				"lib/supabase/client.ts",
+				"lib/supabase/library.ts",
+				"lib/supabase/database.types.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final backend typecheck",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"typecheck"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final Sonora production build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Enable Quasar SSR mode",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"exec",
+				"quasar",
+				"--",
+				"mode",
+				"add",
+				"ssr"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Typecheck SSR auth",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"typecheck"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Format SSR Supabase files",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"exec",
+				"prettier",
+				"--",
+				"--write",
+				"README.md",
+				"package.json",
+				"lib/supabase/client.ts",
+				"lib/supabase/server.ts",
+				"src-ssr/middlewares/supabase.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run SSR typecheck",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"typecheck"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check SSR TS types",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"typecheck"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "SSR production validation",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build Quasar SSR output",
+			"type": "shell",
+			"command": "npm run build",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Lint auth SSR files",
+			"type": "shell",
+			"command": "npm exec eslint -- -c ./eslint.config.js src/components/auth/AuthGate.vue src/components/auth/AuthPanel.vue lib/supabase/client.ts lib/supabase/server.ts lib/supabase/library.ts src-ssr/middlewares/supabase.ts",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Sonora SSR preview",
+			"type": "shell",
+			"command": "npm run dev",
+			"args": [],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Sonora SPA preview",
+			"type": "shell",
+			"command": "npm run dev",
+			"args": [],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify Sonora SPA",
+			"type": "shell",
+			"command": "npm run typecheck; if ($?) { npm run build }",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Typecheck app",
+			"type": "shell",
+			"command": "cd /d c:\\MusicPlaylist\\frontend && npm run typecheck",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Typecheck project",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"typecheck"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Type check",
+			"type": "shell",
+			"command": "npm run typecheck -- --pretty false",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "typecheck",
+			"type": "shell",
+			"command": "npm run typecheck",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build Sonora",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Lint changed source",
+			"type": "shell",
+			"command": "npx eslint -c eslint.config.js src/components/library/SonoraLibrary.vue src/services/sonora-library.ts lib/supabase/library.ts lib/supabase/database.types.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check formatting",
+			"type": "shell",
+			"command": "npx prettier --check src/components/library/SonoraLibrary.vue src/services/sonora-library.ts src/css/app.css lib/supabase/library.ts lib/supabase/database.types.ts lib/supabase/schema.sql lib/supabase/seed.sql lib/supabase/migrations/20261106_music_storage_and_lyrics.sql README.md",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Review worktree diff",
+			"type": "shell",
+			"command": "git status --short; git diff --check; git diff --stat",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
